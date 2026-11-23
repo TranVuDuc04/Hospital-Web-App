@@ -35,7 +35,7 @@ Create a `.env` file in the backend directory:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://vqh04092004:admin%40@cluster0.nnhndae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.nnhndae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 MONGO_DATABASE=hospital_analytics
 NODE_ENV=development
 ```

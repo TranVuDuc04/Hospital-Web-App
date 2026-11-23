@@ -49,7 +49,7 @@ REACT_APP_KEYCLOAK_REALM=demo
 REACT_APP_KEYCLOAK_CLIENT_ID=demo-client
 
 # MongoDB Configuration
-REACT_APP_MONGO_URI=mongodb+srv://vqh04092004:admin@cluster0.nnhndae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+REACT_APP_MONGO_URI=mongodb+srv://<username>:<password>@cluster0.nnhndae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 REACT_APP_MONGO_DATABASE=hospital_analytics
 
 # API Configuration
@@ -68,7 +68,7 @@ npm install
 # Create .env file
 cat > .env << EOF
 PORT=3001
-MONGO_URI=mongodb+srv://vqh04092004:admin@cluster0.nnhndae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.nnhndae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 MONGO_DATABASE=hospital_analytics
 EOF
 

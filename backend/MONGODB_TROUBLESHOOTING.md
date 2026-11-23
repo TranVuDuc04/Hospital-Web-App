@@ -19,17 +19,17 @@ In your `backend/.env` file, try these alternatives:
 
 #### Option A: Add SSL parameters
 ```env
-MONGO_URI=mongodb+srv://vqh04092004:admin@cluster0.nnhndae.mongodb.net/hospital_analytics?retryWrites=true&w=majority&ssl=true&authSource=admin
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.nnhndae.mongodb.net/hospital_analytics?retryWrites=true&w=majority&ssl=true&authSource=admin
 ```
 
 #### Option B: Simplified connection
 ```env
-MONGO_URI=mongodb+srv://vqh04092004:admin@cluster0.nnhndae.mongodb.net/hospital_analytics?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.nnhndae.mongodb.net/hospital_analytics?retryWrites=true&w=majority
 ```
 
 #### Option C: With timeout settings
 ```env
-MONGO_URI=mongodb+srv://vqh04092004:admin@cluster0.nnhndae.mongodb.net/hospital_analytics?retryWrites=true&w=majority&serverSelectionTimeoutMS=5000&socketTimeoutMS=45000
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.nnhndae.mongodb.net/hospital_analytics?retryWrites=true&w=majority&serverSelectionTimeoutMS=5000&socketTimeoutMS=45000
 ```
 
 ### 3. Network/Firewall Check
@@ -121,7 +121,7 @@ Create a test file `backend/test-connection.js`:
 const { MongoClient } = require('mongodb');
 
 const testConnection = async () => {
-  const uri = 'mongodb+srv://vqh04092004:admin@cluster0.nnhndae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+  const uri = 'mongodb+srv://<username>:<password>@cluster0.nnhndae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
   
   try {
     const client = new MongoClient(uri, {

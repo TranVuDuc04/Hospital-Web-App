@@ -8,8 +8,12 @@ import authMiddleware from './middleware/auth.js';
 (async function(){
   dotenv.config();
   
-  // Fixed password encoding: admin@ becomes admin%40
-  const MONGO_URI = "mongodb+srv://vqh04092004:admin@cluster0.nnhndae.mongodb.net/hospital_analytics";
+  // Read the connection string from backend/.env (see backend/.env.example)
+  const MONGO_URI = process.env.MONGO_URI;
+  if (!MONGO_URI) {
+    console.error("❌ MONGO_URI is not set. Copy backend/.env.example to backend/.env and fill it in.");
+    process.exit(1);
+  }
 
   try {
     await mongoose.connect(MONGO_URI, {
