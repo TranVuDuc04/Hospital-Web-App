@@ -98,7 +98,11 @@ print_success "Docker images built successfully"
 # Step 5: Deploy applications
 print_status "Step 5: Deploying applications..."
 
-# Apply secrets
+# Apply secrets (k8s/secrets.yaml is gitignored; create it from k8s/secrets.example.yaml)
+if [ ! -f k8s/secrets.yaml ]; then
+    echo "k8s/secrets.yaml not found. Copy k8s/secrets.example.yaml to k8s/secrets.yaml and fill in your values."
+    exit 1
+fi
 kubectl apply -f k8s/secrets.yaml
 
 # Deploy backend
